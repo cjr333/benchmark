@@ -84,10 +84,12 @@ public class MeasureUsage {
     A a = new A();
     B b = new B();
     C c = new C();
+    D d = new D();
     long memory = MemoryMeasurer.measureBytes(a);
     long memory2 = MemoryMeasurer.measureBytes(b);
     long memory3 = MemoryMeasurer.measureBytes(c);
-    System.out.println(memory + " vs " + memory2 + " vs " + memory3);
+    long memory4 = MemoryMeasurer.measureBytes(d);
+    System.out.println(memory + " vs " + memory2 + " vs " + memory3 + " vs " + memory4);
   }
 
   public static class A {
@@ -106,6 +108,14 @@ public class MeasureUsage {
     public C() {
       c[0] = new Integer(1);
     }
+  }
+
+  public static class D {
+    private byte a = 1;
+    private byte b = 1;
+    private byte c = 1;
+    private byte d = 1;
+    private byte e = 1;
   }
 
   @Test
